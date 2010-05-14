@@ -1,0 +1,7 @@
+This little project represents my personal fiddlings with the Geonames API (http://www.geonames.org/export/ws-overview.html) and learning to use git.
+
+There is another existing python wrapper to the Geonames API, but it is old and seems to be abandoned. See http://www.zindep.com/blog-zindep/Geoname-python/
+
+This wrapper uses simplejson to simply convert the Geonames data into python objects.
+
+Any suggestions, criticisms or contributions are most welcome!
