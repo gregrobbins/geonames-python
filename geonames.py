@@ -37,3 +37,21 @@ def search(**kwargs):
         if key in valid_kwargs:
             params[key] = kwargs[key]
     return fetchJson(method, params)
+
+def postalCodeSearch(**kwargs):
+    method = 'postalCodeSearchJSON'
+    valid_kwargs = ('postalcode', 'postalcode_startsWith', 'placename', 'placename_startsWith', 'maxRows', 'country', 'countryBias', 'style', 'operator', 'isReduced', 'charset',)
+    params = {}
+    for key in kwargs:
+        if key in valid_kwargs:
+            params[key] = kwargs[key]
+    return fetchJson(method, params)
+
+def findNearbyPostalCodes(**kwargs):
+    method = 'findNearbyPostalCodesJSON'
+    valid_kwargs = ('postalcode', 'placename', 'maxRows', 'country', 'localCountry', 'lat', 'lng', 'radius', 'style',)
+    params = {}
+    for key in kwargs:
+        if key in valid_kwargs:
+            params[key] = kwargs[key]
+    return fetchJson(method, params)
