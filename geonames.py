@@ -10,7 +10,6 @@ def fetchJson(method, params):
     js = json.loads(resource[0])
     return js
 
-
 def get(geonameId, **kwargs):
     method = 'getJSON'
     valid_kwargs = ('lang',)
@@ -27,7 +26,8 @@ def children(geonameId, **kwargs):
     for key in kwargs:
         if key in valid_kwargs:
             params[key] = kwargs[key]
-    return fetchJson(method, params)
+    results = fetchJson(method, params)
+    return results['geonames']
 
 def search(**kwargs):
     method = 'searchJSON'
@@ -36,7 +36,8 @@ def search(**kwargs):
     for key in kwargs:
         if key in valid_kwargs:
             params[key] = kwargs[key]
-    return fetchJson(method, params)
+    results = fetchJson(method, params)
+    return results['geonames']
 
 def postalCodeSearch(**kwargs):
     method = 'postalCodeSearchJSON'
@@ -45,7 +46,8 @@ def postalCodeSearch(**kwargs):
     for key in kwargs:
         if key in valid_kwargs:
             params[key] = kwargs[key]
-    return fetchJson(method, params)
+    results = fetchJson(method, params)
+    return results['postalCodes']
 
 def findNearbyPostalCodes(**kwargs):
     method = 'findNearbyPostalCodesJSON'
@@ -54,4 +56,5 @@ def findNearbyPostalCodes(**kwargs):
     for key in kwargs:
         if key in valid_kwargs:
             params[key] = kwargs[key]
-    return fetchJson(method, params)
+    results = fetchJson(method, params)
+    return results['postalCodes']
