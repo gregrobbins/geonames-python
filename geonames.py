@@ -58,3 +58,13 @@ def findNearbyPostalCodes(**kwargs):
             params[key] = kwargs[key]
     results = fetchJson(method, params)
     return results['postalCodes']
+
+def hierarchy(geonameId, **kwargs):
+    method = 'hierarchyJSON'
+    valid_kwargs = ('lang')
+    params = {'geonameId': geonameId}
+    for key in kwargs:
+        if key in valid_kwargs:
+            params[key] = kwargs[key]
+    results = fetchJson(method, params)
+    return results['geonames']
