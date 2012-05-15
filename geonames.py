@@ -28,7 +28,11 @@ def children(geonameId, **kwargs):
         if key in valid_kwargs:
             params[key] = kwargs[key]
     results = fetchJson(method, params)
-    return results['geonames']
+
+    if('geonames' in results):
+		return results['geonames']
+    else:
+		return None
 
 def search(**kwargs):
     method = 'searchJSON'
@@ -38,7 +42,11 @@ def search(**kwargs):
         if key in valid_kwargs:
             params[key] = kwargs[key]
     results = fetchJson(method, params)
-    return results['geonames']
+
+    if('geonames' in results):
+        return results['geonames']
+    else:
+        return None
 
 def postalCodeSearch(**kwargs):
     method = 'postalCodeSearchJSON'
@@ -48,7 +56,11 @@ def postalCodeSearch(**kwargs):
         if key in valid_kwargs:
             params[key] = kwargs[key]
     results = fetchJson(method, params)
-    return results['postalCodes']
+
+    if('postalCodes' in results):
+        return results['postalCodes']
+    else:
+        return None
 
 def findNearbyPostalCodes(**kwargs):
     method = 'findNearbyPostalCodesJSON'
@@ -58,7 +70,11 @@ def findNearbyPostalCodes(**kwargs):
         if key in valid_kwargs:
             params[key] = kwargs[key]
     results = fetchJson(method, params)
-    return results['postalCodes']
+
+    if('postalCodes' in results):
+        return results['postalCodes']
+    else:
+        return None
 
 def hierarchy(geonameId, **kwargs):
     method = 'hierarchyJSON'
@@ -68,4 +84,8 @@ def hierarchy(geonameId, **kwargs):
         if key in valid_kwargs:
             params[key] = kwargs[key]
     results = fetchJson(method, params)
-    return results['geonames']
+
+    if('geonames' in results):
+        return results['geonames']
+    else:
+        return None
