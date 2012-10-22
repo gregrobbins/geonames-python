@@ -30,9 +30,9 @@ def children(geonameId, **kwargs):
     results = fetchJson(method, params)
 
     if('geonames' in results):
-		return results['geonames']
+        return results['geonames']
     else:
-		return None
+        return None
 
 def search(**kwargs):
     method = 'searchJSON'
